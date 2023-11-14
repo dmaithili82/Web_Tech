@@ -1,17 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attractive Holy Grail Layout</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header, nav, main, aside, footer {
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        header, nav, main, aside {
+            background-color: #333;
+            margin: 10px;
+        }
+
+        h1, h2, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        main, aside {
+            flex: 1;
+        }
+
+        main {
+            order: 1;
+        }
+
+        aside {
+            order: 2;
+        }
+
+        footer {
+            order: 3;
+            margin-top: 10px; /* Adjust this margin as needed */
+        }
+    </style>
 </head>
-
 <body>
-  <main>
-    <h1>Vanilla JavaScript App</h1>
-  </main>
-</body>
+    <header>
+        <h1>Header</h1>
+    </header>
+    <div style="display: flex;">
+        <nav>
+            <h2>Menu Side-Bar</h2>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Main Content Area</h2>
+            <div>
+                <p>Click the button to increase the counter:</p>
+                <button id="counterButton" onclick="increaseCounter()">Increase Counter</button>
+                <p id="counterValue">Counter Value: 0</p>
+            </div>
+        </main>
+    </div>
 
+    <aside>
+        <h2>Advertisement</h2>
+        <a href="https://www.amazon.com/" target="_blank">
+            <img src="C:\Users\dmait\OneDrive\Desktop\amazon image.jpg" alt="Product Advertisement">
+        </a>
+    </aside>
+    <script>
+        let counter = 0;
+
+        function increaseCounter() {
+            counter++;
+            document.getElementById('counterValue').textContent = `Counter Value: ${counter}`;
+        }
+    </script>
+
+<footer>
+    <h2>Footer</h2>
+    <p>
+        Addendum: I solved the problem of creating an interactive counter. Here's how I did it...
+
+        <br><br>
+
+        **Styles:**
+        <br>
+        The overall styling of the page is designed to create an attractive and cohesive layout. Key style attributes include:
+
+        ```css
+        body {
+            background-color: black;
+            color: white;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header, nav, main, aside {
+            background-color: #333;
+            margin: 10px;
+        }
+        ```
+
+        These styles ensure a black background, white text, and a flexbox column layout for the entire page. Each section (header, nav, main, aside) has a dark background with a margin, providing a visually appealing Holy Grail layout.
+
+        <br><br>
+
+        Button Used:
+        <br>
+        The HTML contains a button that triggers the 'increaseCounter' function when clicked. The button is styled as follows:
+
+        ```html
+        <button id="counterButton" onclick="increaseCounter()">Increase Counter</button>
+        ```
+
+        The 'onclick' attribute binds the 'increaseCounter' function to the button, making it interactive for users to click and increase the counter value.
+
+        <br><br>
+
+        Image and Link:
+        <br>
+        The 'Advertisement' section includes an Amazon link and image. Here's the relevant HTML:
+
+
+        The link (`<a>`) opens in a new tab (`target="_blank"`) when clicked and directs users to Amazon. The image (`<img>`) serves as an attractive advertisement. The 'alt' attribute provides alternative text for accessibility.
+
+    </p>
+</footer>
+
+</body>
 </html>
